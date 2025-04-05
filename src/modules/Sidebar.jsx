@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Sidebar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true)
   return (
-    <div>Sidebar</div>
+    <div>
+
+    </div>
   )
 }
 
