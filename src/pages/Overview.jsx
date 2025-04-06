@@ -2,7 +2,9 @@ import React from 'react'
 
 const Overview = () => {
   return (
-    <div>Overview</div>
+    <div className='flex-1 overflow-auto relative'>
+      
+    </div>
   )
 }
 
