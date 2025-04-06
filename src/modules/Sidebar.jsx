@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MenuIcon } from 'lucide-react';
+import { sidebarLinks } from '../hooks/useRoute';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -21,6 +23,16 @@ const Sidebar = () => {
         >
           <MenuIcon size={24}/>
         </motion.button>
+
+        <nav className='mt-8 flex-grow'>
+           {sidebarLinks.map((item, index)=> (
+            <NavLink key={index} to={item.link}>
+              <motion.div className='flex items-center p-4 text-md font-medium rounded-lg hover:bg-gray-700 transition-colors'>
+                <item.icon size={20}/> {item.title}
+              </motion.div>
+            </NavLink>
+           ))}
+        </nav>
       </div>
     </motion.div>
   );
