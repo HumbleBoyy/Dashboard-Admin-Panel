@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { MenuIcon } from 'lucide-react';
 import { sidebarLinks } from '../hooks/useRoute';
 import { NavLink } from 'react-router-dom';
@@ -28,7 +28,21 @@ const Sidebar = () => {
            {sidebarLinks.map((item, index)=> (
             <NavLink key={index} to={item.link}>
               <motion.div className='flex items-center p-4 text-md font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2'>
-                <item.icon size={20} style={{color: item.color, minWidth:"20px"}}/> {item.title}
+                <item.icon size={20} style={{color: item.color, minWidth:"20px"}}/> 
+
+                <AnimatePresence>
+                   {isSidebarOpen && (
+                      <motion.span
+                      className='ml-4 whitespace-nowrap'
+                      initial={{opacity:0, widows:0}}
+                      animate={{opacity:1, width:"auto"}}
+                      exit={{opacity:0, width:0}}
+                      transition={{duration:0.2, delay:0.1}}
+                    >
+                      {item.title}
+                    </motion.span>
+                   )}
+                </AnimatePresence>
               </motion.div>
             </NavLink>
            ))} 
