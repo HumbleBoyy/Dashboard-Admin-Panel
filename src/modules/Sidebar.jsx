@@ -27,11 +27,11 @@ const Sidebar = () => {
         <nav className='mt-8 flex-grow'>
            {sidebarLinks.map((item, index)=> (
             <NavLink key={index} to={item.link}>
-              <motion.div className='flex items-center p-4 text-md font-medium rounded-lg hover:bg-gray-700 transition-colors'>
-                <item.icon size={20}/> {item.title}
+              <motion.div className='flex items-center p-4 text-md font-medium rounded-lg hover:bg-gray-700 transition-colors mb-2'>
+                <item.icon size={20} style={{color: item.color, minWidth:"20px"}}/> {item.title}
               </motion.div>
             </NavLink>
-           ))}
+           ))} 
         </nav>
       </div>
     </motion.div>
