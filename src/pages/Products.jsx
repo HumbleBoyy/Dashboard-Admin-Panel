@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { AlertTriangle, DollarSign, Package,TrendingUp } from "lucide-react";
 import StatCard from "../components/StatCard";
 import ProductTable from '../components/productsComponent/ProductTable';
+import OverviewPieChart from '../components/overviewComponents/OverviewPieChart';
+import ProductSalesChart from '../components/productsComponent/ProductSalesChart';
 const Products = () => {
   return (
     <div className='flex-1 overflow-auto relative'>
@@ -20,6 +22,11 @@ const Products = () => {
         </motion.div>
 
         <ProductTable/>
+
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+           <ProductSalesChart/>
+           <OverviewPieChart/>
+        </div>
       </main>
     </div>
   )
