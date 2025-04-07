@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from "framer-motion";
-const StatCard = ({title, color, value}) => {
+const StatCard = ({title, color, icon: Icon, value}) => {
   return (
     <motion.div
     className='bg-gray-800 bg-opacity-50 backdrop-blur-md overflow-hidden shadow-lg rounded-xl border border-gray-700'
