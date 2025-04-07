@@ -35,7 +35,7 @@ const UserActivityHeatmap = () => {
                     />
                     <Legend wrapperStyle={{ position: "absolute",  right: 0 }} />
                     {["0-4", "4-8", "8-12", "12-16", "16-20", "20-24"].map((timeSlot) => (
-                        <Bar key={timeSlot} dataKey={timeSlot} fill={`#${Math.floor(Math.random()*16777215).toString(16)}`} />
+                        <Bar key={timeSlot} dataKey={timeSlot} fill={`#${Math.floor(Math.random()*16666285).toString(16)}`} />
                     ))}
                 </BarChart>
             </ResponsiveContainer>
