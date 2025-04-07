@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { BarChart2, ShoppingBag, Users, Zap } from "lucide-react";
 import StatCard from "../components/StatCard";
+import OverviewChart from '../components/overviewComponents/OverviewChart';
 const Overview = () => {
   return (
     <div className='flex-1 overflow-auto relative'>
@@ -20,7 +21,7 @@ const Overview = () => {
 
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
-
+           <OverviewChart/>
         </div>
       </main>
     </div>
