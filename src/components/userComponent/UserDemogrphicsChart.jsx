@@ -21,7 +21,32 @@ const UserDemogrphicsChart = () => {
 	>
        <h2 className='text-xl font-semibold text-gray-100 mb-4'>User Demographics</h2>
        <div style={{ width: "100%", height: 300 }}>
-        
+          <ResponsiveContainer>
+             <PieChart data={userDemographicsData}>
+                <Pie
+                   data={userDemographicsData}
+                   cx={"50%"}
+                   cy={"50%"}
+                   labelLine={false}
+                   label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                   outerRadius={90}
+                   fill='#8884d8'
+                   dataKey='value'
+                >
+                   {userDemographicsData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                   ))}
+                </Pie>
+                <Tooltip 
+                  contentStyle={{
+                    backgroundColor: "rgba(31, 41, 55, 0.8)",
+                    borderColor: "#4B5563",
+                  }}
+                  itemStyle={{ color: "#E5E7EB" }}
+                />
+                <Legend wrapperStyle={{ position: "absolute" }} />
+             </PieChart>
+          </ResponsiveContainer>
        </div>
     </motion.div>
   )
