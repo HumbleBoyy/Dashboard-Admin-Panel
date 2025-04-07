@@ -5,7 +5,7 @@ import Header from '../modules/Header'
 
 const DashboardPage = () => {
   return (
-    <div className='flex flex-col w-full'>
+    <div className='flex flex-col w-full h-[100vh] overflow-y-auto'>
       <Header/>
       <Routes>
           {pagesRoute.map((item)=> <Route path={item.path} element={item.element} key={item.id}/>)}
