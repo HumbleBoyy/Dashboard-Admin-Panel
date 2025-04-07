@@ -6,9 +6,9 @@ const COLORS = ["#6366F1", "#8B5CF6", "#EC4899", "#10B981", "#F59E0B"];
 
 const SALES_CHANNEL_DATA = [
 	{name: "Website", value: 68900 },
-	{name: "Mobile App", value: 42890 },
-	{name: "Marketplace", value: 19800 },
-	{name: "Social Media", value: 98700 },
+	{name: "Mobile App", value: 52890 },
+	{name: "Marketplace", value: 59800 },
+	{name: "Social Media", value: 58700 },
 ];
 const OverviewChannelChart = () => {
     return (
