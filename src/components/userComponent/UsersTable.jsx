@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 import { Edit, Search, Trash2 } from "lucide-react";
 
 const userData = [
-	{ id: 1, name: "John Doe", email: "john@example.com", role: "Customer", status: "Active", img:"https://images.unsplash.com/photo-1488161628813-04466f872be2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
-	{ id: 2, name: "Jane Smith", email: "jane@example.com", role: "Admin", status: "Active", img:"https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
-	{ id: 3, name: "Bob Johnson", email: "bob@example.com", role: "Bloger", status: "Inactive", img:"https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVvcGxlfGVufDB8fDB8fHww" },
-	{ id: 4, name: "Alice Brown", email: "alice@example.com", role: "Customer", status: "Active", img:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fHww" },
-	{ id: 5, name: "Charlie Wilson", email: "charlie@example.com", role: "Moderator", status: "Active", img:"https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
-    { id: 6, name: "Tom Jerry", email: "tom@example.com", role: "Actor", status: "Active", img:"https://images.unsplash.com/photo-1522556189639-b150ed9c4330?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
-    { id: 7, name: "Miss Lady", email: "lady@example.com", role: "Model", status: "Inactive", img:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
+	{ id: 1, name: "John Doe", email: "john@example.com", role: "Customer", status:true, img:"https://images.unsplash.com/photo-1488161628813-04466f872be2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
+	{ id: 2, name: "Jane Smith", email: "jane@example.com", role: "Admin", status:false, img:"https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
+	{ id: 3, name: "Bob Johnson", email: "bob@example.com", role: "Bloger", status:true, img:"https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVvcGxlfGVufDB8fDB8fHww" },
+	{ id: 4, name: "Alice Brown", email: "alice@example.com", role: "Customer", status:true, img:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fHww" },
+	{ id: 5, name: "Charlie Wilson", email: "charlie@example.com", role: "Moderator", status:true, img:"https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
+    { id: 6, name: "Tom Jerry", email: "tom@example.com", role: "Actor", status:false, img:"https://images.unsplash.com/photo-1522556189639-b150ed9c4330?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
+    { id: 7, name: "Miss Lady", email: "lady@example.com", role: "Model & Actress", status:true, img:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
+    { id: 7, name: "Veronica Willson", email: "vero@example.com", role: "Lawyer", status:true, img:"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
 ];
 
 const UsersTable = () => {
@@ -69,7 +70,7 @@ const UsersTable = () => {
             {item.role}
          </td>
          <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-            <span className={`${item.status === "Active" ? "bg-green-600" : "bg-red-600"} px-2 rounded-2xl`}>{item.status}</span>
+            <span className={`${item.status === true ? "bg-green-600" : "bg-red-600"} px-2 rounded-2xl`}>{item.status === true ? "Active" : "Inactive"}</span>
          </td>
          <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
             <button className='text-indigo-400 hover:text-indigo-300 mr-2'>
