@@ -4,6 +4,7 @@ import { BarChart2, ShoppingBag, Users, Zap } from "lucide-react";
 import StatCard from "../components/StatCard";
 import OverviewChart from '../components/overviewComponents/OverviewChart';
 import OverviewPieChart from '../components/overviewComponents/OverviewPieChart';
+import OverviewChannelChart from '../components/overviewComponents/OverviewChannelChart';
 const Overview = () => {
   return (
     <div className='flex-1 overflow-auto relative'>
@@ -24,6 +25,7 @@ const Overview = () => {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
            <OverviewChart/>
            <OverviewPieChart/>
+           <OverviewChannelChart/>
         </div>
       </main>
     </div>
