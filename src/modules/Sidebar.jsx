@@ -5,12 +5,12 @@ import { sidebarLinks } from '../hooks/useRoute';
 import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <motion.div
       initial={{ opacity: 0, width: 80 }}
-      animate={{ opacity: 1, width: isSidebarOpen ? 260 : 80 }}
+      animate={{ opacity: 1, width: isSidebarOpen ? 250 : 80 }}
       transition={{ duration: 0.5 }}
       className="relative flex-shrink-0"
     >
