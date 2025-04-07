@@ -2,18 +2,18 @@ import React from 'react'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { motion } from "framer-motion";
 const reportSalesData = [
-	{ title: "Jul", sales: 9999 },
+	{ title: "Jul", sales: 9500 },
 	{ title: "Aug", sales: 2500 },
 	{ title: "Sep", sales: 8100 },
 	{ title: "Oct", sales: 2200 },
 	{ title: "Nov", sales: 5400 },
 	{ title: "Dec", sales: 7200 },
-	{ title: "Jan", sales: 6100 },
+	{ title: "Jan", sales: 8100 },
 	{ title: "Feb", sales: 5900 },
 	{ title: "Mar", sales: 7800 },
 	{ title: "Apr", sales: 8100 },
 	{ title: "May", sales: 9400 },
-	{ title: "Jun", sales: 1200 },
+	{ title: "Jun", sales: 4200 },
 ];
 const OverviewChart = () => {
   return (
@@ -37,7 +37,7 @@ const OverviewChart = () => {
                 borderColor: "#4B5563",
             }}
             itemStyle={{ color: "#E5E7EB" }}
-             >
+             />
                   <Line
                     type='monotone'
                     dataKey='sales'
@@ -46,7 +46,6 @@ const OverviewChart = () => {
                     dot={{ fill: "#6366F1", strokeWidth: 2, r: 6 }}
                     activeDot={{ r: 8, strokeWidth: 2 }}
 					/>
-             </Tooltip>
            </LineChart> 
         </ResponsiveContainer>
      </div>
