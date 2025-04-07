@@ -20,7 +20,23 @@ const OverviewPieChart = () => {
      <h2 className='text-lg font-medium mb-4 text-gray-100'>Category Distribution</h2>
 
      <div className='h-80'>
-
+        <ResponsiveContainer width={"100%"} height={"100%"}>
+            <PieChart>
+                <Pie
+                  data={categoryData}
+                  cx={"50%"}
+                  cy={"50%"}
+                  outerRadius={80}
+                  labelLine={false}
+                  fill='#8884d8'
+                  label={({name, percent})=> `${name} ${(percent * 100).toFixed(0)}%`}
+                >
+                {categoryData.map((entry, index)=> (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]}/>
+                ))}
+                </Pie>
+            </PieChart>
+        </ResponsiveContainer>
      </div>
     </motion.div>
   )
