@@ -17,6 +17,11 @@ const Overview = () => {
 					<StatCard title='Total Products' icon={ShoppingBag} value='1890' color='#EC4899' />
 					<StatCard title='Conversion Rate' icon={BarChart2} value='15.9%' color='#10B981' />
         </motion.div>
+
+
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+
+        </div>
       </main>
     </div>
   )
