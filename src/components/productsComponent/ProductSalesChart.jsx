@@ -8,6 +8,12 @@ const salesData = [
 	{ month: "Apr", sales: 4500 },
 	{ month: "May", sales: 6000 },
 	{ month: "Jun", sales: 5500 },
+    { month: "Jul", sales: 8500 },
+    { month: "Aug", sales: 6500 },
+    { month: "Sep", sales: 3500 },
+    { month: "Oct", sales: 6800 },
+    { month: "Nov", sales: 2500 },
+    { month: "Dec", sales: 7800 },
 ];
 const ProductSalesChart = () => {
   return (
