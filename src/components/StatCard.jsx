@@ -1,8 +1,12 @@
 import React from 'react'
-
+import { motion } from "framer-motion";
 const StatCard = () => {
   return (
-    <div>StatCard</div>
+    <motion.div
+     className=''
+    >
+
+    </motion.div>
   )
 }
 
