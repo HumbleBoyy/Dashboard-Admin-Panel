@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { AlertTriangle, DollarSign, Package,TrendingUp } from "lucide-react";
 import StatCard from "../components/StatCard";
+import ProductTable from '../components/productsComponent/ProductTable';
 const Products = () => {
   return (
     <div className='flex-1 overflow-auto relative'>
@@ -17,6 +18,8 @@ const Products = () => {
 					<StatCard title='Low Stock' icon={AlertTriangle} value='67' color='#EC4899' />
 					<StatCard title='Total Revenue' icon={DollarSign} value='$760,000' color='#10B981' />
         </motion.div>
+
+        <ProductTable/>
       </main>
     </div>
   )
