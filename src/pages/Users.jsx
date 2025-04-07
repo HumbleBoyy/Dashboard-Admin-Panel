@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import { AlertTriangle, DollarSign, Package,TrendingUp } from "lucide-react";
+import { UserCheck, UserPlus, UsersIcon, UserX } from "lucide-react";
 import StatCard from "../components/StatCard";
 
 const userStats = {
@@ -19,10 +19,20 @@ const Users = () => {
       animate={{opacity:1, y:0}}
       transition={{duration:1}}
      >
-       <StatCard title='Total Products' icon={Package} value='9250' color='#6366F1' />
-       <StatCard title='Top Selling' icon={TrendingUp} value='8,971' color='#8B5CF6' />
-       <StatCard title='Low Stock' icon={AlertTriangle} value='67' color='#EC4899' />
-       <StatCard title='Total Revenue' icon={DollarSign} value='$760,000' color='#10B981' />
+	<StatCard
+						name='Total Users'
+						icon={UsersIcon}
+						value={userStats.totalUsers.toLocaleString()}
+						color='#6366F1'
+					/>
+					<StatCard name='New Users Today' icon={UserPlus} value={userStats.newUsersToday} color='#10B981' />
+					<StatCard
+						name='Active Users'
+						icon={UserCheck}
+						value={userStats.activeUsers.toLocaleString()}
+						color='#F59E0B'
+					/>
+					<StatCard name='Churn Rate' icon={UserX} value={userStats.churnRate} color='#EF4444' />
      </motion.div>
    </main>
  </div>
