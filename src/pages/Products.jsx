@@ -12,10 +12,10 @@ const Products = () => {
          animate={{opacity:1, y:0}}
          transition={{duration:1}}
         >
-          <StatCard title='Total Products' icon={Package} value='$900,000' color='#6366F1' />
-					<StatCard title='Top Selling' icon={TrendingUp} value='4,671' color='#8B5CF6' />
+          <StatCard title='Total Products' icon={Package} value='9250' color='#6366F1' />
+					<StatCard title='Top Selling' icon={TrendingUp} value='8,971' color='#8B5CF6' />
 					<StatCard title='Low Stock' icon={AlertTriangle} value='67' color='#EC4899' />
-					<StatCard title='Total Revenue' icon={DollarSign} value='15.9%' color='#10B981' />
+					<StatCard title='Total Revenue' icon={DollarSign} value='$760,000' color='#10B981' />
         </motion.div>
       </main>
     </div>
