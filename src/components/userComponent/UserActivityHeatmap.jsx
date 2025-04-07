@@ -33,7 +33,7 @@ const UserActivityHeatmap = () => {
                         }}
                         itemStyle={{ color: "#E5E7EB" }}
                     />
-                    <Legend wrapperStyle={{ position: "absolute", top: 0, right: 0 }} />
+                    <Legend wrapperStyle={{ position: "absolute",  right: 0 }} />
                     {["0-4", "4-8", "8-12", "12-16", "16-20", "20-24"].map((timeSlot) => (
                         <Bar key={timeSlot} dataKey={timeSlot} fill={`#${Math.floor(Math.random()*16777215).toString(16)}`} />
                     ))}
