@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from "recharts";
-const salesData = [
+const productSalesData = [
 	{ month: "Jan", sales: 4000 },
 	{ month: "Feb", sales: 3000 },
 	{ month: "Mar", sales: 5000 },
@@ -26,7 +26,7 @@ const ProductSalesChart = () => {
 <h2 className='text-xl font-semibold text-gray-100 mb-4'>Sales Trend</h2>
     <div className='h-80'>
         <ResponsiveContainer width={"100%"} height={"100%"}>
-                    <LineChart data={salesData}>
+                    <LineChart data={productSalesData}>
                     <CartesianGrid strokeDasharray={"3 3"} stroke='#4B5563'/>
                     <XAxis dataKey={"month"} stroke='#9ca3af'/>
                     <YAxis stroke='#9ca3af'/>
@@ -37,8 +37,9 @@ const ProductSalesChart = () => {
                     }}
                     itemStyle={{ color: "#E5E7EB" }}
                     />
+                    <Legend />
                         <Line
-                            type='monotone'
+                            type="natural"
                             dataKey='sales'
                             stroke='#6366F1'
                             strokeWidth={3}
