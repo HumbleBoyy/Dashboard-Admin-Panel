@@ -6,7 +6,8 @@ const PRODUCT_DATA = [
 	{ id: 2, name: "Leather Wallet", category: "Accessories", price: 39.99, stock: 89, sales: 800, img:"https://images.unsplash.com/photo-1612023395494-1c4050b68647?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fExlYXRoZXIlMjBXYWxsZXR8ZW58MHx8MHx8fDA%3D" },
 	{ id: 3, name: "Smart Watch", category: "Electronics", price: 199.99, stock: 56, sales: 650, img:"https://images.unsplash.com/photo-1544117519-31a4b719223d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNtYXJ0JTIwd2F0Y2h8ZW58MHx8MHx8fDA%3D" },
 	{ id: 4, name: "Yoga Mat", category: "Fitness", price: 29.99, stock: 210, sales: 950, img:"https://images.unsplash.com/photo-1646239646963-b0b9be56d6b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8WW9nYSUyME1hdHxlbnwwfHwwfHx8MA%3D%3D" },
-	{ id: 5, name: "Coffee Maker", category: "Home", price: 79.99, stock: 78, sales: 720, img:"https://images.unsplash.com/photo-1608354580875-30bd4168b351?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q29mZmVlJTIwTWFrZXJ8ZW58MHx8MHx8fDA%3D"}
+	{ id: 5, name: "Coffee Maker", category: "Home", price: 79.99, stock: 78, sales: 720, img:"https://images.unsplash.com/photo-1608354580875-30bd4168b351?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q29mZmVlJTIwTWFrZXJ8ZW58MHx8MHx8fDA%3D"},
+	{ id: 6, name: "Iron", category: "Home", price: 36.99, stock: 18, sales: 520, img:null}
 ];
 
 const ProductTable = () => {
@@ -59,10 +60,9 @@ const ProductTable = () => {
 			   transition={{duration:0.3}}
 			  >
                  <td className='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-100 flex gap-2 items-center'>
-				   <img src={item.img} alt={item.name} className='size-10 rounded-full'/>
+				   <img src={item.img !== null ? item.img : "https://www.eclosio.ong/wp-content/uploads/2018/08/default.png"} alt={item.name} className='size-10 rounded-full object-cover'/>
 				   {item.name}
 				 </td>
-
 				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
 					{item.category}
 				 </td>

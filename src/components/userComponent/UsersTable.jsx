@@ -11,6 +11,7 @@ const userData = [
     { id: 6, name: "Tom Jerry", email: "tom@example.com", role: "Actor", status:false, img:"https://images.unsplash.com/photo-1522556189639-b150ed9c4330?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
     { id: 7, name: "Miss Lady", email: "lady@example.com", role: "Model & Actress", status:true, img:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
     { id: 8, name: "Veronica Baner", email: "vero@example.com", role: "Lawyer", status:true, img:"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D" },
+    { id: 9, name: "Bruce John", email: "bruce@example.com", role: "Waiter", status:true, img:null },
 ];
 
 const UsersTable = () => {
@@ -59,7 +60,7 @@ const UsersTable = () => {
        transition={{duration:0.3}}
       >
          <td className='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-100 flex gap-2 items-center'>
-           <img src={item.img} alt={item.name} className='size-10 rounded-full object-cover'/>
+           <img src={item.img !== null ? item.img : "https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg"} alt={item.name} className='size-10 rounded-full object-cover'/>
            {item.name}
          </td>
 
