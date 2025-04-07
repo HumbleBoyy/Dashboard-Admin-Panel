@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import { AlertTriangle, BarChart2, DollarSign, Package, ShoppingBag, TrendingUp, Users, Zap } from "lucide-react";
+import { AlertTriangle, DollarSign, Package,TrendingUp } from "lucide-react";
 import StatCard from "../components/StatCard";
 const Products = () => {
   return (
