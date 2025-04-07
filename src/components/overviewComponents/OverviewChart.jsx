@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const reportSalesData = [
 	{ title: "Jul", sales: 9500 },
 	{ title: "Aug", sales: 2500 },
-	{ title: "Sep", sales: 8100 },
+	{ title: "Sep", sales: 2100 },
 	{ title: "Oct", sales: 2200 },
 	{ title: "Nov", sales: 5400 },
 	{ title: "Dec", sales: 7200 },
@@ -12,7 +12,7 @@ const reportSalesData = [
 	{ title: "Feb", sales: 5900 },
 	{ title: "Mar", sales: 7800 },
 	{ title: "Apr", sales: 8100 },
-	{ title: "May", sales: 9400 },
+	{ title: "May", sales: 5400 },
 	{ title: "Jun", sales: 4200 },
 ];
 const OverviewChart = () => {
