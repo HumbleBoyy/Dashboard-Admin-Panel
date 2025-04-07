@@ -5,10 +5,10 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 const COLORS = ["#6366F1", "#8B5CF6", "#EC4899", "#10B981", "#F59E0B"];
 
 const SALES_CHANNEL_DATA = [
-	{ name: "Website", value: 68900 },
-	{ name: "Mobile App", value: 42890 },
-	{ name: "Marketplace", value: 19800 },
-	{ name: "Social Media", value: 98700 },
+	{ title: "Website", value: 68900 },
+	{ title: "Mobile App", value: 42890 },
+	{ title: "Marketplace", value: 19800 },
+	{ title: "Social Media", value: 98700 },
 ];
 const OverviewChannelChart = () => {
     return (
@@ -21,7 +21,9 @@ const OverviewChannelChart = () => {
 			<h2 className='text-lg font-medium mb-4 text-gray-100'>Sales by Channel</h2>
 
             <div className='h-80'>
-              
+              <ResponsiveContainer>
+                 
+              </ResponsiveContainer>
             </div>
       </motion.div>
     )   

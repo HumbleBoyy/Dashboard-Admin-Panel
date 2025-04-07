@@ -25,7 +25,7 @@ const Overview = () => {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
            <OverviewChart/>
            <OverviewPieChart/>
-           <OverviewChannelChart/>
+           {/* <OverviewChannelChart/> */}
         </div>
       </main>
     </div>
