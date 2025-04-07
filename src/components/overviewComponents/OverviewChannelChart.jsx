@@ -41,7 +41,6 @@ const OverviewChannelChart = () => {
 								<Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
 							))}
 						</Bar>
-
                   </BarChart>
               </ResponsiveContainer>
             </div>
