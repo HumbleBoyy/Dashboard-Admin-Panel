@@ -21,7 +21,24 @@ const UserActivityHeatmap = () => {
 	>
         <h2 className='text-xl font-semibold text-gray-100 mb-4'>User Activity Heatmap</h2>
         <div style={{ width: "100%", height: 300 }}>
-            
+            <ResponsiveContainer width={"100%"} height={"100%"}>
+                <BarChart data={userActivityData}>
+                    <CartesianGrid strokeDasharray={"3 3"} stroke='#4B5563'/>
+                    <XAxis dataKey={"name"} stroke='#9ca3af'/>
+                    <YAxis stroke='#9ca3af'/>
+                    <Tooltip 
+                        contentStyle={{
+                            backgroundColor: "rgba(31, 41, 55, 0.8)",
+                            borderColor: "#4B5563",
+                        }}
+                        itemStyle={{ color: "#E5E7EB" }}
+                    />
+                    <Legend wrapperStyle={{ position: "absolute", top: 0, right: 0 }} />
+                    {["0-4", "4-8", "8-12", "12-16", "16-20", "20-24"].map((timeSlot) => (
+                        <Bar key={timeSlot} dataKey={timeSlot} fill={`#${Math.floor(Math.random()*16777215).toString(16)}`} />
+                    ))}
+                </BarChart>
+            </ResponsiveContainer>
         </div>
     </motion.div>
   )
