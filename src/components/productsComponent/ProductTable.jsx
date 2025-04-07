@@ -62,6 +62,27 @@ const ProductTable = () => {
 				   <img src={item.img} alt={item.name} className='size-10 rounded-full'/>
 				   {item.name}
 				 </td>
+
+				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
+					{item.category}
+				 </td>
+				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
+					<span className='text-green-500'>$</span>{item.price.toFixed(2)}
+				 </td>
+				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
+					{item.stock}
+				 </td>
+				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
+					{item.sales}
+				 </td>
+				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
+					<button className='text-indigo-400 hover:text-indigo-300 mr-2'>
+						<Edit size={18} />
+					</button>
+					<button className='text-red-400 hover:text-red-300'>
+						<Trash2 size={18} />
+					</button>
+				 </td>
 			  </motion.tr>
 			))}
 		  </tbody>
