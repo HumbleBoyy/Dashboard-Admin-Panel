@@ -1,16 +1,14 @@
 import React from 'react'
 import { motion } from "framer-motion";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts";
 
-const dailyOrdersData = [
-	{ date: "07/01", orders: 45 },
-	{ date: "07/02", orders: 52 },
-	{ date: "07/03", orders: 49 },
-	{ date: "07/04", orders: 60 },
-	{ date: "07/05", orders: 55 },
-	{ date: "07/06", orders: 58 },
-	{ date: "07/07", orders: 62 },
+const orderStatusData = [
+	{ name: "Pending", value: 20 },
+	{ name: "Processing", value: 61 },
+	{ name: "Shipped", value: 90 },
+	{ name: "Delivered", value: 620 },
 ];
+const COLORS = ["#FF6B6B", "#4ECDC4", "#45B7D1", "#FED766", "#2AB7CA"];
 const OrdersStatusDistribution = () => {
   return (
     <motion.div
@@ -19,23 +17,32 @@ const OrdersStatusDistribution = () => {
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.2 }}
 	>
-    <h2 className='text-xl font-semibold text-gray-100 mb-4'>Daily Orders</h2>
+    <h2 className='text-xl font-semibold text-gray-100 mb-4'>Order Status Distribution</h2>
     <div style={{ width: "100%", height: 300 }}>
         <ResponsiveContainer width={"100%"} height={"100%"}>
-           <LineChart data={dailyOrdersData}>
-               <CartesianGrid strokeDasharray={"3 3"} stroke='#374151'/>
-               <XAxis dataKey={"date"}stroke='#9CA3AF'/>
-               <YAxis stroke='#9CA3AF'/>
-               <Tooltip
-							contentStyle={{
-								backgroundColor: "rgba(31, 41, 55, 0.8)",
-								borderColor: "#4B5563",
-							}}
-							itemStyle={{ color: "#E5E7EB" }}
-				/>
-				<Legend />
-				<Line type='monotone' dataKey='orders' stroke='#8B5CF6' strokeWidth={2} />
-           </LineChart>
+            <PieChart>
+                      <Pie
+                         data={orderStatusData}
+                         cx='50%'
+                         cy='50%'
+                         outerRadius={80}
+                         fill='#8884d8'
+                         dataKey='value'
+                         label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                      >
+                        {orderStatusData.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        ))}
+                      </Pie>
+                      <Tooltip
+                        contentStyle={{
+                            backgroundColor: "rgba(31, 41, 55, 0.8)",
+                            borderColor: "#4B5563",
+                        }}
+                        itemStyle={{ color: "#E5E7EB" }}
+                       />
+                       <Legend />
+                    </PieChart>
         </ResponsiveContainer>
     </div>
     </motion.div>
