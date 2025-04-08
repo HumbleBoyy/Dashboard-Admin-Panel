@@ -35,6 +35,14 @@ const SalesByCategoryChart = () => {
 								<Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
 							))}
            </Pie>
+           <Tooltip
+							contentStyle={{
+								backgroundColor: "rgba(31, 41, 55, 0.8)",
+								borderColor: "#4B5563",
+							}}
+							itemStyle={{ color: "#E5E7EB" }}
+						/>
+						<Legend />
          </PieChart>
       </ResponsiveContainer>
     </div>
