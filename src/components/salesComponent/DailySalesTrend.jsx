@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
 const dailySalesData = [
-	{ name: "Mon", sales: 1000 },
-	{ name: "Tue", sales: 1200 },
+	{ name: "Mon", sales: 1500 },
+	{ name: "Tue", sales: 1800 },
 	{ name: "Wed", sales: 900 },
-	{ name: "Thu", sales: 1100 },
-	{ name: "Fri", sales: 1300 },
-	{ name: "Sat", sales: 1600 },
-	{ name: "Sun", sales: 1400 },
+	{ name: "Thu", sales: 600 },
+	{ name: "Fri", sales: 1500 },
+	{ name: "Sat", sales: 1900 },
+	{ name: "Sun", sales: 2900 },
 ];
 const DailySalesTrend = () => {
   return (
