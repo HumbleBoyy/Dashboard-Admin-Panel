@@ -4,13 +4,18 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { useState } from "react";
 
 const monthlySalesData = [
-	{ month: "Jan", sales: 4000 },
-	{ month: "Feb", sales: 3000 },
-	{ month: "Mar", sales: 5000 },
-	{ month: "Apr", sales: 4500 },
-	{ month: "May", sales: 6000 },
-	{ month: "Jun", sales: 5500 },
-	{ month: "Jul", sales: 7000 },
+	{ month: "Jan", sales: 4500 },
+	{ month: "Feb", sales: 5100 },
+	{ month: "Mar", sales: 6000 },
+	{ month: "Apr", sales: 6500 },
+	{ month: "May", sales: 6500 },
+	{ month: "Jun", sales: 3000 },
+	{ month: "Jul", sales: 9000 },
+    { month: "Aug", sales: 8000 },
+    { month: "Sep", sales: 3000 },
+    { month: "Oct", sales: 2600 },
+    { month: "Nov", sales: 4581 },
+    { month: "Dec", sales: 5788 },
 ];
 const SalesOverView = () => {
     const [selectTimeTange, setSelectTimeRange] = useState("2")
@@ -34,7 +39,20 @@ const SalesOverView = () => {
         <option value="4">This Year</option>
       </select>
     </div>
-
+     <div className='w-full h-80'>
+        <ResponsiveContainer width={"100%"} height={"100%"}>
+           <AreaChart data={monthlySalesData}>
+             <CartesianGrid strokeDasharray={"3 3"} stroke='#374151'/>
+             <XAxis dataKey={"month"} stroke='#9CA3AF'/>
+             <YAxis stroke='#9CA3AF'/>
+             <Tooltip
+               contentStyle={{backgroundColor: "rgba(31, 41, 55, 0.8)", borderColor:"#4B5563"}}
+               itemStyle={{color:"#E5E7EB"}}
+             />
+             <Area type='monotone' dataKey='sales' stroke='#8B5CF6' fill='#8B5CF6' fillOpacity={0.3} />
+           </AreaChart>
+        </ResponsiveContainer>
+     </div>
     </motion.div>
   )
 }
