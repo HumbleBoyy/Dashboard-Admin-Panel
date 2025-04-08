@@ -1,7 +1,14 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import { AlertTriangle, DollarSign, Package,TrendingUp } from "lucide-react";
+import { AlertTriangle, CarTaxiFront, DollarSign, CreditCard, ShoppingCart,TrendingUp } from "lucide-react";
 import StatCard from "../components/StatCard";
+
+const salesStats = {
+	totalRevenue: "$6,721,281",
+	averageOrderValue: "$99.99",
+	conversionRate: "4.81%",
+	salesGrowth: "22.5%",
+};
 const Sales = () => {
   return (
     <div className='flex-1 overflow-auto relative'>
@@ -12,10 +19,10 @@ const Sales = () => {
       animate={{opacity:1, y:0}}
       transition={{duration:1}}
      >
-       <StatCard title='Total Products' icon={Package} value='9250' color='#6366F1' />
-       <StatCard title='Top Selling' icon={TrendingUp} value='8,971' color='#8B5CF6' />
-       <StatCard title='Low Stock' icon={AlertTriangle} value='67' color='#EC4899' />
-       <StatCard title='Total Revenue' icon={DollarSign} value='$760,000' color='#10B981' />
+       <StatCard title='Total Revenue' icon={DollarSign} value={salesStats.totalRevenue} color='#10B981' />
+       <StatCard title='Avg.Order Value' icon={ShoppingCart} value={salesStats.averageOrderValue} color='#10B981' />
+       <StatCard title='Low Stock' icon={TrendingUp} value={salesStats.conversionRate} color='#F59E0B' />
+       <StatCard title='Sales Growth' icon={CreditCard} value={salesStats.salesGrowth} color='#EF4444' />
      </motion.div>
    </main>
  </div>
