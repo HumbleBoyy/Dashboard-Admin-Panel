@@ -2,6 +2,9 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import { AlertTriangle, CarTaxiFront, DollarSign, CreditCard, ShoppingCart,TrendingUp } from "lucide-react";
 import StatCard from "../components/StatCard";
+import SalesOverView from '../components/salesComponent/SalesOverView';
+import SalesByCategoryChart from '../components/salesComponent/SalesByCategoryChart';
+import DailySalesTrend from '../components/salesComponent/DailySalesTrend';
 
 const salesStats = {
 	totalRevenue: "$6,721,281",
@@ -24,6 +27,13 @@ const Sales = () => {
        <StatCard title='Low Stock' icon={TrendingUp} value={salesStats.conversionRate} color='#F59E0B' />
        <StatCard title='Sales Growth' icon={CreditCard} value={salesStats.salesGrowth} color='#EF4444' />
      </motion.div>
+
+     <SalesOverView/>
+
+     <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8'>
+        <SalesByCategoryChart/>
+        <DailySalesTrend/>
+     </div>
    </main>
  </div>
   )
