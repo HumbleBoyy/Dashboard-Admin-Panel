@@ -1,23 +1,25 @@
 import React, { useState } from 'react'
 import { motion } from "framer-motion";
 import { Edit, Search, Trash2 } from "lucide-react";
-const PRODUCT_DATA = [
-	{ id: 1, name: "Wireless Earbuds", category: "Electronics", price: 59.99, stock: 143, sales: 1200, img:'https://images.unsplash.com/photo-1627989580309-bfaf3e58af6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2lyZWxlc3MlMjBlYXJidWRzfGVufDB8fDB8fHww'},
-	{ id: 2, name: "Leather Wallet", category: "Accessories", price: 39.99, stock: 89, sales: 800, img:"https://images.unsplash.com/photo-1612023395494-1c4050b68647?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fExlYXRoZXIlMjBXYWxsZXR8ZW58MHx8MHx8fDA%3D" },
-	{ id: 3, name: "Smart Watch", category: "Electronics", price: 199.99, stock: 56, sales: 650, img:"https://images.unsplash.com/photo-1544117519-31a4b719223d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNtYXJ0JTIwd2F0Y2h8ZW58MHx8MHx8fDA%3D" },
-	{ id: 4, name: "Yoga Mat", category: "Fitness", price: 29.99, stock: 210, sales: 950, img:"https://images.unsplash.com/photo-1646239646963-b0b9be56d6b5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8WW9nYSUyME1hdHxlbnwwfHwwfHx8MA%3D%3D" },
-	{ id: 5, name: "Coffee Maker", category: "Home", price: 79.99, stock: 78, sales: 720, img:"https://images.unsplash.com/photo-1608354580875-30bd4168b351?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q29mZmVlJTIwTWFrZXJ8ZW58MHx8MHx8fDA%3D"},
-	{ id: 6, name: "Iron", category: "Home", price: 36.99, stock: 18, sales: 520, img:null}
+const orderData = [
+	{ id: "ORD001", customer: "John Doe", total: 235.4, status: "Delivered", date: "2023-07-01" },
+	{ id: "ORD002", customer: "Jane Smith", total: 412.0, status: "Processing", date: "2023-07-02" },
+	{ id: "ORD003", customer: "Bob Johnson", total: 162.5, status: "Shipped", date: "2023-07-03" },
+	{ id: "ORD004", customer: "Alice Brown", total: 750.2, status: "Pending", date: "2023-07-04" },
+	{ id: "ORD005", customer: "Charlie Wilson", total: 95.8, status: "Delivered", date: "2023-07-05" },
+	{ id: "ORD006", customer: "Eva Martinez", total: 310.75, status: "Processing", date: "2023-07-06" },
+	{ id: "ORD007", customer: "David Lee", total: 528.9, status: "Shipped", date: "2023-07-07" },
+	{ id: "ORD008", customer: "Grace Taylor", total: 189.6, status: "Delivered", date: "2023-07-08" },
 ];
 
 const OrderTable = () => {
 	const [search, setSearch] = useState("")
-	const [filterProducts, setFilterProducts] = useState(PRODUCT_DATA)
+	const [filterOrders, setFilterOrders] = useState(orderData)
     const handleSearch = (e) => {
 		const term = e.target.value.toLowerCase()
 		setSearch(term)
-	    const filtered = PRODUCT_DATA.filter(product => product.name.toLowerCase().includes(term) || product.category.toLowerCase().includes(term))
-		setFilterProducts(filtered)
+	    const filteredData = orderData.filter(item => item.customer.toLowerCase().includes(term) || item.status.toLowerCase().includes(term))
+		setFilterOrders(filteredData)
 	}
   return (
     <motion.div
@@ -39,41 +41,40 @@ const OrderTable = () => {
        <table className='min-w-full divide-y  divide-gray-700'>
           <thead>
 			  <tr>
-				<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Name</th>
+				<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Id</th>
 			
-				<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Category</th>
+				<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Customer</th>
 			
-				<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Price</th>
+				<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Total</th>
 		
-				<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Stock</th>
+				<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Status</th>
 			
-				<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Sales</th>
-		
-				<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Actions</th>
+				<th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Date</th>
+                
+                <th className='px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider'>Action</th>
 			  </tr>
 		  </thead>
 		  <tbody className='divide-y divide-gray-700'>
-            {filterProducts.map(item => (
+            {filterOrders.map(item => (
 			  <motion.tr key={item.id}
 			   initial={{opacity:0}}
 			   animate={{opacity:1}}
 			   transition={{duration:0.3}}
 			  >
-                 <td className='px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-100 flex gap-2 items-center'>
-				   <img src={item.img !== null ? item.img : "https://www.eclosio.ong/wp-content/uploads/2018/08/default.png"} alt={item.name} className='size-10 rounded-full object-cover'/>
-				   {item.name}
+				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
+					{item.id}
 				 </td>
 				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-					{item.category}
+					{item.customer}
 				 </td>
 				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-					<span className='text-green-500'>$</span>{item.price.toFixed(2)}
+					{item.total}
 				 </td>
-				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-					{item.stock}
+                 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
+					{item.status}
 				 </td>
-				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-					{item.sales}
+                 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
+					{item.date}
 				 </td>
 				 <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
 					<button className='text-indigo-400 hover:text-indigo-300 mr-2'>

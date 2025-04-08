@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import StatCard from '../components/StatCard';
 import DailyOrders from '../components/ordersComponent/DailyOrders';
 import OrdersStatusDistribution from '../components/ordersComponent/OrdersStatusDistribution';
+import OrderTable from '../components/ordersComponent/OrderTable';
 const orderStats = {
 	totalOrders: "2,181",
 	pendingOrders: "26",
@@ -29,6 +30,8 @@ const Orders = () => {
           <DailyOrders/>
           <OrdersStatusDistribution/>
       </div>
+
+      <OrderTable/>
       </main>
     </div>
   )
