@@ -2,6 +2,7 @@ import React from 'react'
 import { CheckCircle, Clock, DollarSign, ShoppingBag } from "lucide-react";
 import { motion } from "framer-motion";
 import StatCard from '../components/StatCard';
+import DailyOrders from '../components/ordersComponent/DailyOrders';
 const orderStats = {
 	totalOrders: "2,181",
 	pendingOrders: "26",
@@ -24,6 +25,9 @@ const Orders = () => {
        <StatCard title='Total Revenue' icon={DollarSign} value={orderStats.totalRevenue} color='#EF4444' />
       </motion.div>
       </main>
+      <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8'>
+        <DailyOrders/>
+     </div>
     </div>
   )
 }
