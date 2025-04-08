@@ -22,7 +22,7 @@ const Orders = () => {
        <StatCard title='Pending Orders' icon={Clock} value={orderStats.pendingOrders}  color='#F59E0B' />
        <StatCard title='Completed Orders' icon={CheckCircle} value={orderStats.completedOrders} color='#14e810' />
        <StatCard title='Total Revenue' icon={DollarSign} value={orderStats.totalRevenue} color='#EF4444' />
-     </motion.div>
+      </motion.div>
       </main>
     </div>
   )
