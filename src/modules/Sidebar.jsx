@@ -12,7 +12,7 @@ const Sidebar = () => {
       initial={{ opacity: 0, width: 80 }}
       animate={{ opacity: 1, width: isSidebarOpen ? 250 : 80 }}
       transition={{ duration: 0.5 }}
-      className="relative flex-shrink-0"
+      className="relative flex-shrink-0 sidebar_wrapper"
     >
       <div className="h-screen bg-gray-800 bg-opacity-50 backdrop-blur-md p-4 flex flex-col border-r border-gray-500">
         <motion.button
