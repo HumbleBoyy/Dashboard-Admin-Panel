@@ -5,7 +5,7 @@ import { sidebarLinks } from '../hooks/useRoute';
 import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   return (
     <motion.div
