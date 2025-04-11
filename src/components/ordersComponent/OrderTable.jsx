@@ -71,7 +71,17 @@ const OrderTable = () => {
 					{item.total}
 				 </td>
                  <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
-					{item.status}
+					<span className={`py-1 px-2 inline-flex leading-5 font-semibold rounded-full ${
+						item.status === "Delivered" 
+						? "bg-green-600"
+						: item.status === "Processing"
+						? "bg-yellow-600"
+						:item.status === "Shipped"
+						? "bg-blue-600"
+						:"bg-red-600"
+					}`}>
+					  {item.status}
+					</span>
 				 </td>
                  <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-300'>
 					{item.date}
