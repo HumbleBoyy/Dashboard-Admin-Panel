@@ -29,6 +29,11 @@ const OverViewCards = () => {
                 <item.icon className={`size-6 ${item.change >= 0 ? "text-green-500" : "text-red-500"}`} />
               </div>
           </div>
+          <div className={`mt-4 flex items-center ${item.change >= 0 ? "text-green-600" : "text-red-500"}`}>
+             {item.change >= 0 ? <ArrowUpRight size={20}/> : <ArrowDownRight size={20}/>}
+             <span className='ml-1 text-sm font-medium'>{item.change}%</span>
+             <span className='ml-2 text-sm text-gray-400'>vs last period</span>
+          </div>
         </motion.div>
       ))}
     </div>
