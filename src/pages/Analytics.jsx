@@ -5,6 +5,7 @@ import ChannelPerformance from '../components/analyticsComponent/ChannelPerforma
 import ProductPerformance from '../components/analyticsComponent/ProductPerformance';
 import UserRetention from '../components/analyticsComponent/UserRetention';
 import CustomerSegmentation from '../components/analyticsComponent/CustomerSegmentation';
+import AIPoweredInsights from '../components/analyticsComponent/AIPoweredInsights';
 
   const Analytics = () => {
     return (
@@ -21,6 +22,7 @@ import CustomerSegmentation from '../components/analyticsComponent/CustomerSegme
            <UserRetention/>
            <CustomerSegmentation/>
          </div>
+         <AIPoweredInsights/>
      </main>
    </div>
     )
