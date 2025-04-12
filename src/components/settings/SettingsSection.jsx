@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from "framer-motion";
-const SettingsSection = ({icon:Icon, title, children}) => {
+const SettingsSection = ({icon:Icon, title, children, extraClass}) => {
   return (
     <motion.div
         className='bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg shadow-lg rounded-xl p-6 border border-gray-700 mb-8'
@@ -12,7 +12,9 @@ const SettingsSection = ({icon:Icon, title, children}) => {
           <Icon className='text-indigo-400 mr-4' size='24' />
           <h2 className='text-xl font-semibold text-gray-100'>{title}</h2>
       </div>
-      {children}
+      <div className={`${extraClass}`}>
+       {children}
+      </div>
     </motion.div>
   )
 }

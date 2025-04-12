@@ -1,5 +1,6 @@
 import React from 'react'
 import Profile from '../components/settings/Profile'
+import Notification from '../components/settings/Notification'
 
 const Settings = () => {
   return (
