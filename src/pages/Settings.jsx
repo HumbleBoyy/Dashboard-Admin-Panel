@@ -3,6 +3,7 @@ import Profile from '../components/settings/Profile'
 import Notification from '../components/settings/Notification'
 import Security from '../components/settings/Security'
 import ConnectedAccounts from '../components/settings/ConnectedAccounts'
+import DangerZone from '../components/settings/DangerZone'
 
 const Settings = () => {
   return (
@@ -12,6 +13,7 @@ const Settings = () => {
             <Notification/>
             <Security/>
             <ConnectedAccounts/>
+            <DangerZone/>
         </main>
     </div>
   )
