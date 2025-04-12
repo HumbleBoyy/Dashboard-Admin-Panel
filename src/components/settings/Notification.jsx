@@ -11,7 +11,7 @@ const Notification = () => {
     })
 
   return (
-    <SettingsSection icon={Bell} title={"Notifications"} extraClass={"flex flex-col gap-5"}>
+    <SettingsSection icon={Bell} title={"Notifications"}>
        <ToggleSwitch label={"Push Notifications"} onToggle={()=> setNotification({...notification, push: !notification.push})} isOn={notification.push}/>
        <ToggleSwitch label={"Email Notifications"} onToggle={()=> setNotification({...notification, email: !notification.email})} isOn={notification.email}/>
        <ToggleSwitch label={"Message Notifications"} onToggle={()=> setNotification({...notification, message: !notification.message})} isOn={notification.message}/>
