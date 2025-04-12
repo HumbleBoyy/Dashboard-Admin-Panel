@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SettingsSection from './SettingsSection'
-import { MailPlus } from 'lucide-react'
+import { MailPlus, Plus } from 'lucide-react'
 import google from '../../assets/socialmedialogos/google.png'
 import facebook from '../../assets/socialmedialogos/facebook.svg'
 import twitter from '../../assets/socialmedialogos/x.png'
@@ -46,6 +46,7 @@ const ConnectedAccounts = () => {
               }))}>{item.connected ? "Connected" : "Connect"}</button>
             </div>
         ))}
+        <button className='flex mt-4 items-center text-indigo-400 hover:text-indigo-300 transition duration-200'><Plus size={18} className='mr-2'/>Add Account</button>
     </SettingsSection>
   )
 }
