@@ -5,11 +5,11 @@ import ToggleSwitch from './ToggleSwitch'
 
 const Security = () => {
      const [auth, setAuth] = useState({
-            twoAuth:false
+            twoAuth:true
         })
   return (
     <SettingsSection icon={Lock} title={"Security"}>
-       <ToggleSwitch label={"Two-Factor Authentication"} onToggle={()=> setAuth({...auth, twoAuth: !auth.twoAuth})}/>
+       <ToggleSwitch isOn={auth.twoAuth} label={"Two-Factor Authentication"} onToggle={()=> setAuth({...auth, twoAuth: !auth.twoAuth})}/>
     </SettingsSection>
   )
 }
