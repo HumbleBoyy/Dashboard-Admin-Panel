@@ -15,7 +15,7 @@ const Profile = () => {
            />
            <div>
               <h3 className='text-lg font-semibold text-gray-100'>Asadulloh</h3>
-              <Link target='_blank' className='text-blue-500' to={"https://asadullohs.vercel.app/"}>asadullohs@gmail.com</Link>
+              <Link target='_blank' className='text-blue-500' to={"https://asadullohs.vercel.app/"}>asadullohs.uz</Link>
            </div>
         </div>
         <button className='bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-200 w-full sm:w-auto'>Edit Profile</button>
