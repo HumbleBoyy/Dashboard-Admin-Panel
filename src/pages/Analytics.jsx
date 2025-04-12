@@ -3,6 +3,7 @@
 import RevenueChart from '../components/analyticsComponent/RevenueChart';
 import ChannelPerformance from '../components/analyticsComponent/ChannelPerformance';
 import ProductPerformance from '../components/analyticsComponent/ProductPerformance';
+import UserRetention from '../components/analyticsComponent/UserRetention';
 
   const Analytics = () => {
     return (
@@ -16,6 +17,7 @@ import ProductPerformance from '../components/analyticsComponent/ProductPerforma
          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8'>
            <ChannelPerformance/>
            <ProductPerformance/>
+           <UserRetention/>
          </div>
      </main>
    </div>
