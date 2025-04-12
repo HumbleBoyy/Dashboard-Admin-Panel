@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { motion } from "framer-motion";
 const SettingsSection = ({icon:Icon, title, children}) => {
   return (
     <motion.div
